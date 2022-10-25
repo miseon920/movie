@@ -15,12 +15,16 @@ function Search({
   setResults,
   sresults,
   handleImgError,
+  onsearch,
+  setOnsearch,
+  srmovie,
+  setSrmovie
 }) {
   const snav = useNavigate();
-  const [srmovie, setSrmovie] = useState([]); //검색된 리스트 담을곳
 
   const searchHandler = (e) => {
-    snav(`/search/movie?query=${sresult}`);
+    setOnsearch(true);
+    snav(`/discover/movie?query=${sresult}`);
     // if (e.key === "Enter") {
     //   snav(`/search/keyword?query=${sresult}`);
     // }
@@ -29,6 +33,7 @@ function Search({
   const getMovie = async () => {
     const getmovie = await instance.get(`/search/movie?query=${sresult}`);
     const searchMovie = getmovie.data.results;
+    setOnsearch(false);
     setSrmovie(searchMovie);
   };
   useEffect(() => {
@@ -46,7 +51,7 @@ function Search({
         />
         <button onClick={searchHandler}>검색</button>
       </div>
-      {sresult ? (
+      {onsearch && sresult.length ? (
         <ul className="list_box">
           {srmovie &&
             srmovie.map((it) => (

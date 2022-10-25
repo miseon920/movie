@@ -94,55 +94,57 @@ const Section3 = () => {
   //   setSwc(true);
   // }, [tabT]);
   return (
-    <section className="Section3 inner">
-      <div className="title">
-        <h2>자주 묻는 질문</h2>
-        <a href="">
-          더보기 <i className="xi-arrow-right"></i>
-        </a>
-      </div>
-      <div className="content">
-        <div className="tab_bt">
-          <ul>
-            {categories.map((ca, idx) => (
-              <li
-                key={idx}
-                onClick={() => {
-                  Setca(ca.value);
-                  setToggle(0);
-                  setSwc(false);
-                  settabT(idx);
-                }}
-                className={`${tabT === idx ? "on" : ""}`}
-              >
-                {ca.name}
-              </li>
-            ))}
-          </ul>
+    <section className="Section3">
+      <div class="inner">
+        <div className="title">
+          <h2>자주 묻는 질문</h2>
+          <a href="">
+            더보기 <i className="xi-arrow-right"></i>
+          </a>
         </div>
-        <div className="tab_content">
-          {content.map((item, idx) => {
-            const active = idx === Toggle && swc ? "on" : "";
-            return (
-              <div
-                onClick={() => {
-                  setToggle(idx);
-                  if (swc) {
-                    if (active) {
+        <div className="content">
+          <div className="tab_bt">
+            <ul>
+              {categories.map((ca, idx) => (
+                <li
+                  key={idx}
+                  onClick={() => {
+                    Setca(ca.value);
+                    setToggle(0);
+                    setSwc(false);
+                    settabT(idx);
+                  }}
+                  className={`${tabT === idx ? "on" : ""}`}
+                >
+                  {ca.name}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="tab_content">
+            {content.map((item, idx) => {
+              const active = idx === Toggle && swc ? "on" : "";
+              return (
+                <div
+                  onClick={() => {
+                    setToggle(idx);
+                    if (swc) {
+                      if (active) {
+                        setSwc(!swc);
+                      }
+                    } else {
                       setSwc(!swc);
                     }
-                  } else {
-                    setSwc(!swc);
-                  }
-                }}
-                className={`tab_box ${active}`}
-                key={idx}
-              >
-                <h3>{item.question}</h3>
-                <div>{item.answer}</div>
-              </div>
-            );
-          })}
+                  }}
+                  className={`tab_box ${active}`}
+                  key={idx}
+                >
+                  <h3>{item.question}</h3>
+                  <div>{item.answer}</div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

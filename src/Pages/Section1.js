@@ -38,6 +38,14 @@ const Section1 = () => {
   const sett = {
     slidesToShow: 4,
     slidesToScroll: 1,
+        responsive: [
+        {
+          breakpoint: 767,
+          settings: {
+             slidesToShow: 2,
+          }
+        },
+      ]
   };
   return (
     <section className="Section1">

@@ -11,6 +11,7 @@ import View from "./Movie/View";
 import NowPlaying from "./Movie/NowPlaying";
 import Footer from "./component/Footer";
 import { instance, category } from "./api/api";
+import Search from "./Movie/Search";
 
 function App() {
   //const [loading, setLoding] = useState(true);
@@ -115,6 +116,10 @@ function App() {
                   handleImgError={handleImgError}
                 />
               }
+            ></Route>
+            <Route
+              path="/search/movie"
+              element={<Search handleImgError={handleImgError} />}
             ></Route>
           </Routes>
           <Footer />

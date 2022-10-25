@@ -586,3 +586,104 @@ footer .copy {
 .page_nav ul li.active a{
   color:var(--mc);
 }
+
+@media (max-width:767px){
+  .Head_bot{
+    line-height: normal;
+  }
+  .Head_bot>.inner{
+    display:block;
+    padding:15px;
+  }
+    .Head_bot h1 img{
+      width:150px;
+    }
+    nav{
+      padding:15px 0;
+    }
+    nav>ul>li:hover .smenu{
+      margin-top:0;
+    }
+section:not(.Mainvisual) {
+    padding: 45px 0;
+  }
+  .Mainvisual .txt_box h2{
+    font-size:21px;
+  }
+    .Mainvisual .txt_box strong{
+      font-size:16px;
+      padding-top:5px;
+    }
+  .Mainvisual .txt_box{
+    bottom:15px;
+    left:15px;
+  }
+.Mainvisual .slick-slide{
+  padding:0 15px;
+}
+.arrows{
+  display:none;
+}
+section .title h2{
+  font-size:18px;
+}
+section .title a{
+  font-size:14px;
+}
+.Section2 .container{
+  display:block;
+}
+.Section2 .container .left{
+  padding-left:15px;
+  padding-right:15px;
+}
+.Section2 .right{
+  padding:15px;
+}
+.Section2 .right h2 span{
+  font-size:18px;
+}
+footer .foot_top ul{
+ display: grid;
+ grid-template-columns: repeat(2,1fr);
+
+}
+footer .foot_top ul li{
+  text-align: center;
+}
+footer .foot_bot{
+  text-align: center;
+ 
+}
+.sub{
+  padding:30px 15px;
+}
+.list ul.list_box{
+  grid-template-columns:repeat(2,50%)
+}
+.sub .ca_tit,.detail h2{
+  font-size:21px;
+}
+.list h2,.movie_info h3{
+  font-size:18px;
+}
+.movie_info{
+  padding-top:30px;
+}
+.list ul.list_box li div:last-of-type,
+.detail h2>a,
+.movie_info div,
+.movie_info ul li{
+  font-size:14px;
+}
+.movie_box{
+  display:block;
+}
+.detail h2{
+ display:block;
+ overflow:hidden;
+}
+.detail h2 a{
+  display:none;
+}
+}
